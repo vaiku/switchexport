@@ -1,7 +1,7 @@
 import getpass
 import telnetlib
 
-HOST = ["eng-blr-switch-037","eng-blr-switch-126","eng-blr-switch-137"]
+HOST = ["eng-blr-switch-037","]
 
 user = ""
 password = ""
