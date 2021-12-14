@@ -16,12 +16,10 @@ for i in HOST:
     new=f"{password}"
     tn.write(new.encode('ascii')+b"\n") 
     tn.write(b"\n")
-    tn.write(b"copy running-config startup-config\n\n")
-    tn.write(b"copy running-config tftp: \n")
-    tn.write(b"10.197.1.120\n")
-    name=f"{i}"
-    tn.write(name.encode('ascii')+b"\n") 
-    tn.write(b"copy running-config startup-config\n")
+    bk=f"upload config 10.197.1.20 {i}.xsf vr vr-mgmt\n"
+    tn.write(bk.encode('ascii')+b"\n") 
+    tn.write(b"\n")
+    tn.write(b"save\n")
     tn.write(b"\n")
     tn.write(b"exit\n")
     print(tn.read_all().decode('ascii'))
